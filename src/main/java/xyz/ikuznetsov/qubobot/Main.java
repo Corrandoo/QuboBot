@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         HibernateSessionFactory.getSessionFactory().openSession();
-        TelegramBotsApi api = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(new TelegramBot());
         } catch (TelegramApiException e) {
