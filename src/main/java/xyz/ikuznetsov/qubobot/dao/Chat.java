@@ -3,8 +3,8 @@ package xyz.ikuznetsov.qubobot.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users", schema = "a0086306_qubobot", catalog = "")
-public class User {
+@Table(name = "chats", schema = "a0086306_qubobot", catalog = "")
+public class Chat {
     private long id;
     private String position;
 
@@ -33,7 +33,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User that = (User) o;
+        Chat that = (Chat) o;
 
         if (id != that.id) return false;
         if (position != null ? !position.equals(that.position) : that.position != null) return false;
