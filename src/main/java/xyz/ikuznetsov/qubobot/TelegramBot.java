@@ -1,10 +1,10 @@
 package xyz.ikuznetsov.qubobot;
 
 import org.telegram.telegrambots.TelegramApiException;
-import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import xyz.ikuznetsov.qubobot.manager.ChatManager;
 
 /**
  * Класс Telegram бота.
@@ -38,6 +38,6 @@ public class TelegramBot extends TelegramLongPollingBot {
      * Метод обработки входящего сообщения.
      */
     private void handleIncomingMessage(Message message) throws TelegramApiException {
-
+        ChatManager.checkChat(message);
     }
 }
