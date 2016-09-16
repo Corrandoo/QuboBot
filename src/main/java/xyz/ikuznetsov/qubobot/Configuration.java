@@ -1,4 +1,4 @@
-package xyz.ikuznetsov.bot;
+package xyz.ikuznetsov.qubobot;
 
 public class Configuration {
     public static final String BOT_USERNAME = "QuboBot";
