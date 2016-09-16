@@ -6,7 +6,13 @@ import org.telegram.telegrambots.api.objects.Message;
 import xyz.ikuznetsov.qubobot.HibernateSessionFactory;
 import xyz.ikuznetsov.qubobot.dao.UsersEntity;
 
+/**
+ * Методы для работы с чатами в базе данных.
+ */
 public class ChatManager implements Manager {
+    /**
+     * Проверка на наличие чата в базе данных.
+     */
     public static void checkChat(Message message) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         long id = message.getChatId();
@@ -16,6 +22,9 @@ public class ChatManager implements Manager {
             addChat(message);
     }
 
+    /**
+     * Добавление чата в базу данных.
+     */
     public static void addChat(Message message) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();
