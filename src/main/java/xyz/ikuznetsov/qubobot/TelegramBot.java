@@ -1,5 +1,7 @@
 package xyz.ikuznetsov.qubobot;
 
+import org.telegram.telegrambots.TelegramApiException;
+import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -35,7 +37,9 @@ public class TelegramBot extends TelegramLongPollingBot {
     /**
      * Метод обработки входящего сообщения.
      */
-    private void handleIncomingMessage(Message message) {
+    private void handleIncomingMessage(Message message) throws TelegramApiException {
+        long id = message.getChatId();
+        sendMessage(new SendMessage().setText("ВСЕ РОБИТ ПРОСТО ЗБС ЕПТЫ!!!!"));
 
     }
 }
