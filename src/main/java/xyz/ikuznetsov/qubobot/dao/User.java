@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users", schema = "a0086306_qubobot", catalog = "")
-public class UsersEntity {
+public class User {
     private long id;
     private String position;
 
@@ -33,7 +33,7 @@ public class UsersEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UsersEntity that = (UsersEntity) o;
+        User that = (User) o;
 
         if (id != that.id) return false;
         if (position != null ? !position.equals(that.position) : that.position != null) return false;

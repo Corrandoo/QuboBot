@@ -13,6 +13,6 @@
         <property name="hibernate.connection.charSet">UTF-8</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <mapping class="xyz.ikuznetsov.qubobot.dao.UsersEntity"/>
+        <mapping class="xyz.ikuznetsov.qubobot.dao.User"/>
     </session-factory>
 </hibernate-configuration>
