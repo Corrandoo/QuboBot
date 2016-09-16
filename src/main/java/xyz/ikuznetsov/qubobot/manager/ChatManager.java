@@ -46,4 +46,13 @@ public class ChatManager implements Manager {
         session.merge(chat);
         session.getTransaction().commit();
     }
+
+    /**
+     * Получение последней позиции.
+     */
+    public static Position getPosition(Message message) {
+        Session session = new HibernateSessionFactory().getSessionFactory().openSession();
+        Chat chat = session.get(Chat.class, message.getChatId());
+        return Position.valueOf(chat.getPosition().toUpperCase());
+    }
 }

@@ -17,10 +17,13 @@ public class TelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage()) {
             Message message = update.getMessage();
-            try {
-                handleIncomingMessage(message);
-            } catch (Exception e) {
-            }
+            new Thread(() -> {
+                try {
+                    handleIncomingMessage(message);
+                } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                }
+            }).start();
         }
     }
 
