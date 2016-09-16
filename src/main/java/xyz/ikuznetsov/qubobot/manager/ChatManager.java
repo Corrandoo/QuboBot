@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.telegram.telegrambots.api.objects.Message;
 import xyz.ikuznetsov.qubobot.HibernateSessionFactory;
+import xyz.ikuznetsov.qubobot.Position;
 import xyz.ikuznetsov.qubobot.dao.User;
 
 /**
@@ -31,6 +32,18 @@ public class ChatManager implements Manager {
         User user = new User();
         user.setId(message.getChatId());
         session.save(user);
+        session.getTransaction().commit();
+    }
+
+    /**
+     * Установка последней позиции.
+     */
+    public static void setPosition(Message message, Position position) {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.beginTransaction();
+        User user = session.get(User.class, message.getChatId());
+        user.setPosition(position.toString());
+        session.merge(user);
         session.getTransaction().commit();
     }
 }
