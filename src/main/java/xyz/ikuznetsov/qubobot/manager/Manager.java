@@ -1,7 +1,7 @@
 package xyz.ikuznetsov.qubobot.manager;
 
 /**
- * Интерфейс для менеджеров.
+ * Интерфейс, объединяющий менеджеры.
  */
 public interface Manager {
 }
