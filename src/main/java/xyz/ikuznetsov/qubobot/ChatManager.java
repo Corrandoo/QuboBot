@@ -19,5 +19,7 @@ public class ChatManager {
         long id = message.getChatId();
         Query query = session.createQuery("FROM UsersEntity WHERE id=:id");
         query.setParameter("id", id);
+        if(query.list().isEmpty() || query.list().size() == 0)
+            addChat(message);
     }
 }
