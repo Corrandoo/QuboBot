@@ -16,6 +16,7 @@
         <mysql.version>5.1.24</mysql.version>
         <c3p0.version>0.9.1.2</c3p0.version>
         <junit.version>4.12</junit.version>
+        <jsoup.version>1.9.2</jsoup.version>
         <telegram.bots.version>v2.3.5</telegram.bots.version>
     </properties>
 
@@ -49,6 +50,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
         </dependency>
     </dependencies>
 
