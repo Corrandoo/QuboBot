@@ -1,10 +1,10 @@
-package xyz.ikuznetsov.qubobot;
+package xyz.ikuznetsov.qubobot.helper;
 
 import org.telegram.telegrambots.TelegramApiException;
 import org.telegram.telegrambots.api.objects.Message;
 import xyz.ikuznetsov.qubobot.manager.ChatManager;
 
-public class MessageHelper {
+public class MessageHelper implements Helper {
     /**
      * Метод обработки входящего сообщения.
      */

@@ -3,6 +3,7 @@ package xyz.ikuznetsov.qubobot;
 import org.telegram.telegrambots.TelegramApiException;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import xyz.ikuznetsov.qubobot.helper.MessageHelper;
 
 /**
  * Класс Telegram бота.
