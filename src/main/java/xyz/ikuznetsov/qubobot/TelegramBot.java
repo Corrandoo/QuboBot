@@ -1,4 +1,4 @@
-package xyz.ikuznetsov.bot;
+package xyz.ikuznetsov.qubobot;
 
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
