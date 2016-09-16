@@ -38,8 +38,6 @@ public class TelegramBot extends TelegramLongPollingBot {
      * Метод обработки входящего сообщения.
      */
     private void handleIncomingMessage(Message message) throws TelegramApiException {
-        long id = message.getChatId();
-        sendMessage(new SendMessage().setText("ВСЕ РОБИТ ПРОСТО ЗБС ЕПТЫ!!!!"));
 
     }
 }
