@@ -13,7 +13,6 @@ public class MessageHelper implements Helper {
     /**
      * Метод обработки входящего сообщения.
      */
-    static MessageHelper helper = new MessageHelper();
     private static boolean isQuestion(Message message){
         SimpleQuestion question = new SimpleQuestion();
         if(question.simpleQuestionDetector(message))
