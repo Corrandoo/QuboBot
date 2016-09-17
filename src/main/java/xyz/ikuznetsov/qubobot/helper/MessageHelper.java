@@ -3,15 +3,17 @@ package xyz.ikuznetsov.qubobot.helper;
 import org.telegram.telegrambots.TelegramApiException;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
+import xyz.ikuznetsov.qubobot.TelegramBot;
 import xyz.ikuznetsov.qubobot.manager.ChatManager;
 import xyz.ikuznetsov.qubobot.parser.GoogleParser;
 
 import java.io.IOException;
 
-public class MessageHelper implements Helper {
+public class MessageHelper extends TelegramBot implements Helper {
     /**
      * Метод обработки входящего сообщения.
      */
+    static MessageHelper helper = new MessageHelper();
     private static boolean isQuestion(Message message){
         SimpleQuestion question = new SimpleQuestion();
         if(question.simpleQuestionDetector(message))
@@ -23,8 +25,7 @@ public class MessageHelper implements Helper {
         if(isQuestion(message)){
             GoogleParser parser = new GoogleParser();
             String answer = parser.getInfo(message.getText());
-            SendMessage sendMessage = new SendMessage();
-            sendMessage.setChatId(String.valueOf(message.getChatId())).setText(answer);
+            helper.sendMessage(new SendMessage().setChatId(String.valueOf(message.getChatId())).setText(answer));
         }
 
     }
