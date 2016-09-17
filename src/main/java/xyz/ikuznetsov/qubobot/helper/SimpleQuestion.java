@@ -14,6 +14,7 @@ public class SimpleQuestion {
         return isQuestion;
     }
     private void detector(String text){ // Метод с основной логикой
+        String str[] = text.split(" ");
         if(text.contains("?"))
             score += 3;
         if(text.contains("что") || text.contains("кто")) {
@@ -23,14 +24,13 @@ public class SimpleQuestion {
         }
         if(text.contains("определение"))
             score += 2;
-        if(text.contains("это"))
+        if(text.contains("это")) {
             score += 1;
-
+            if(str.length < 4)
+                score += 3;
+        }
     }
     private void decider(){ // Метод, решающий, вопрос это или нет по количеству баллов.
-        if(score >= 4)
-            isQuestion = true;
-        else
-            isQuestion = false;
+        isQuestion = score >= 2;
     }
 }

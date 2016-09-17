@@ -5,6 +5,8 @@ import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import xyz.ikuznetsov.qubobot.helper.MessageHelper;
 
+import java.io.IOException;
+
 /**
  * Класс Telegram бота.
  */
@@ -19,6 +21,8 @@ public class TelegramBot extends TelegramLongPollingBot {
                 try {
                     MessageHelper.handleIncomingMessage(update.getMessage());
                 } catch (TelegramApiException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }).start();
