@@ -11,6 +11,7 @@ import java.io.IOException;
  * Класс Telegram бота.
  */
 public class TelegramBot extends TelegramLongPollingBot {
+    public static TelegramBot telegramBot = new TelegramBot();
     /**
      * Метод определения входящего сообщения.
      */

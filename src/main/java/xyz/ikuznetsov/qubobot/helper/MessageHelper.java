@@ -9,7 +9,7 @@ import xyz.ikuznetsov.qubobot.parser.GoogleParser;
 
 import java.io.IOException;
 
-public class MessageHelper extends TelegramBot implements Helper {
+public class MessageHelper implements Helper {
     /**
      * Метод обработки входящего сообщения.
      */
@@ -25,8 +25,7 @@ public class MessageHelper extends TelegramBot implements Helper {
         if(isQuestion(message)){
             GoogleParser parser = new GoogleParser();
             String answer = parser.getInfo(message.getText());
-            helper.sendMessage(new SendMessage().setChatId(String.valueOf(message.getChatId())).setText(answer));
+            TelegramBot.telegramBot.sendMessage(new SendMessage().setChatId(String.valueOf(message.getChatId())).setText(answer));
         }
-
     }
 }
